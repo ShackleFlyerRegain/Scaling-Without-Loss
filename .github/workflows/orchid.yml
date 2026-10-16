@@ -1,0 +1,28 @@
+name: "tulip"
+run-name: "Chamomile"
+"on":
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  umbra:
+    permissions:
+      id-token: write
+      contents: read
+      pages: write
+    runs-on: ubuntu-latest
+    environment:
+      name: "github-pages"
+      url: ${{ steps.celery.outputs.page_url }}
+    steps:
+      - name: "coral"
+        uses: actions/checkout@v6
+      - name: "Knot"
+        uses: actions/configure-pages@v5
+      - name: "XERIC"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ github.workspace }}
+      - name: "ELM"
+        id: celery
+        uses: actions/deploy-pages@v4
